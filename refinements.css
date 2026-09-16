@@ -1,0 +1,187 @@
+.site-header {
+  background: var(--cream);
+  border-bottom: 0;
+  backdrop-filter: none;
+}
+
+.nav-brand {
+  display: flex;
+  width: 92px;
+  height: 62px;
+  align-items: center;
+}
+
+.nav-brand img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.arrow-icon {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 10px;
+  flex: 0 0 auto;
+}
+
+.arrow-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 14px;
+  height: 1.5px;
+  background: currentColor;
+  transform: translateY(-50%);
+}
+
+.arrow-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 6px;
+  height: 6px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.experience-card .card-art {
+  opacity: .92;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.experience-card .card-art::after {
+  background:
+    linear-gradient(0deg, rgba(3, 18, 31, .98) 0%, rgba(3, 18, 31, .45) 48%, rgba(3, 18, 31, .08) 78%),
+    linear-gradient(90deg, rgba(3, 18, 31, .24), transparent 55%);
+}
+
+.experience-card .art-cristo {
+  background-image: url("https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?auto=format&fit=crop&w=1800&q=82");
+  background-position: center 42%;
+}
+
+.experience-card .art-yacht {
+  background-image: url("https://images.unsplash.com/photo-1777669212261-106cb3e04403?auto=format&fit=crop&w=1200&q=82");
+  background-position: center;
+}
+
+.experience-card .art-yacht::before {
+  content: none;
+}
+
+.experience-card .art-islands {
+  background-image: url("https://images.unsplash.com/photo-1583123483628-cdb29790ead8?auto=format&fit=crop&w=1200&q=82");
+  background-position: center;
+}
+
+.experience-card .art-urban {
+  background-image: url("https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?auto=format&fit=crop&w=1200&q=82");
+  background-position: center 38%;
+}
+
+.experience-card .art-hike {
+  background-image: url("https://images.unsplash.com/photo-1783364691044-299fe82bc954?auto=format&fit=crop&w=1200&q=82");
+  background-position: center;
+}
+
+.experience-card .art-arraial {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Praia%20Grande%20-%20Arraial%20do%20Cabo%20-%20panoramio%20(26).jpg?width=1400");
+  background-position: center;
+}
+
+.outline-text {
+  display: none;
+}
+
+.photo-credits {
+  margin: 1.25rem 0 0;
+  color: var(--muted);
+  font-size: .68rem;
+  text-align: right;
+}
+
+.group-visual {
+  isolation: isolate;
+  background: linear-gradient(150deg, #0bb9b9 0%, #087784 48%, #06283d 100%);
+}
+
+.group-visual::before,
+.group-visual::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: -12%;
+  width: 125%;
+  height: 120px;
+  border-top: 3px solid rgba(255, 255, 255, .72);
+  border-radius: 50%;
+}
+
+.group-visual::before {
+  bottom: 8%;
+  transform: rotate(-3deg);
+}
+
+.group-visual::after {
+  bottom: 2%;
+  border-color: rgba(7, 26, 45, .6);
+  transform: rotate(4deg);
+}
+
+.group-visual .sun {
+  z-index: 1;
+  width: clamp(230px, 24vw, 340px);
+  height: auto;
+  aspect-ratio: 1;
+  left: 50%;
+  top: 46%;
+  border: 0;
+  background: radial-gradient(circle at 32% 28%, #ffe096 0%, #ffbf2f 48%, #ef9e08 100%);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 100px rgba(255, 191, 47, .3);
+}
+
+.group-visual .giant-word {
+  z-index: 3;
+  left: 50%;
+  top: 48%;
+  bottom: auto;
+  color: var(--navy);
+  font-size: clamp(7rem, 13vw, 12rem);
+  line-height: .8;
+  letter-spacing: -.12em;
+  -webkit-text-stroke: 0;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 2px 0 rgba(255, 255, 255, .16);
+}
+
+.visual-caption {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: 7%;
+  color: white;
+  font: 700 .66rem "Manrope", sans-serif;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 900px) {
+  .group-visual .sun { width: 260px; }
+  .group-visual .giant-word { font-size: 8rem; }
+}
+
+@media (max-width: 600px) {
+  .nav-brand { width: 78px; height: 56px; }
+  .group-visual .sun { width: 220px; height: auto; }
+  .group-visual .giant-word { font-size: 6.5rem; }
+  .visual-caption { bottom: 8%; font-size: .58rem; }
+}
